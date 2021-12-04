@@ -1,0 +1,32 @@
+<h1>Lista de tareas</h1>
+<hr>
+<div class="row">
+    <div class="col">
+        <h2>Tareas:</h2>
+        <hr>
+        <ul>
+            <li *ngFor="let tarea of tareas">
+            {{tarea.concepto}} - {{tarea.fecha}}
+            </li>
+        </ul>
+    </div>
+       <div class="col">
+           <h2>Añadir:</h2>
+        <hr>
+        <form (ngSubmit)="agregar()">
+            <input 
+            type="text"
+            name="tarea"
+            placeholder="Tarea"
+            [(ngModel)] ="nuevaTarea.concepto"
+            >
+            <input 
+            type="date" 
+            placeholder="Fecha"
+            name="fecha"
+            [(ngModel)] = "nuevaTarea.fecha"
+            >
+         <button type="submit">Añadir</button>
+        </form>
+    </div>
+</div>
